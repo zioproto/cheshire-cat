@@ -18,11 +18,11 @@ const config: Config = {
     AppFeatures.Plugins
   ],
   endpoints: {
-    chat: `ws://${CORE_HOST}:${CORE_PORT}/ws`,
-    rabbitHole: `http://${CORE_HOST}:${CORE_PORT}/rabbithole`,
-    allLLM: `http://${CORE_HOST}:${CORE_PORT}/settings/llm/`,
-    singleLLM: `http://${CORE_HOST}:${CORE_PORT}/settings/llm/:llm`,
-    plugins: `http://${CORE_HOST}:${CORE_PORT}/plugins/`
+    chat: `wss://${CORE_HOST}:${CORE_PORT}/ws`,
+    rabbitHole: `https://${CORE_HOST}:${CORE_PORT}/rabbithole`,
+    allLLM: `https://${CORE_HOST}:${CORE_PORT}/settings/llm/`,
+    singleLLM: `https://${CORE_HOST}:${CORE_PORT}/settings/llm/:llm`,
+    plugins: `https://${CORE_HOST}:${CORE_PORT}/plugins/`
   }
 }
 
