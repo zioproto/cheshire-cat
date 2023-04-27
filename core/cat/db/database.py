@@ -6,7 +6,10 @@ from sqlalchemy.orm import sessionmaker
 SQLITE_DATABASE_URL = os.getenv("SQLITE_DATABASE_URL", "sqlite:///./metadata-v3.db")
 
 # `check_same_thread` equals to False enables multithreading for SQLite.
-connect_args = {"check_same_thread": False}
+if SQLITE_DATABASE_URL.startswith("sqlite"):
+    connect_args = {"check_same_thread": False}
+else:
+    connect_args = {}
 engine = create_engine(SQLITE_DATABASE_URL, echo=True, connect_args=connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
