@@ -43,7 +43,7 @@ class EmbedderAzureOpenAIConfig(EmbedderSettings):
     openai_api_key: str
     model: str
     api_base: str
-    openai_api_type: str
+    api_type: str
     api_version: str
     deployment: str
 

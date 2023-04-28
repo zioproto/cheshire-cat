@@ -92,17 +92,15 @@ def get_language_embedder(cat):
             embedder = embedders.EmbedderAzureOpenAIConfig.get_embedder_from_config(
                 {
                    "openai_api_key": openai_key,
-                   #"openai_api_type": "azure",
+                   "openai_api_type": "azure",
                    "model": "text-embedding-ada-002",
-                   "deployment": "stregatto",
-                   #"api_base": "https://stregatto.openai.azure.com/",
-                   #"api_type": "azure",
-                   #"api_version": "2022-12-01",
-                   #"deployment_name": "text-davinci-003",
+                   "deployment": "text-embedding-ada-002",
+                   #"engine": "text-embedding-ada-002",
+                   "openai_api_base": "https://stregatto.openai.azure.com/",
+
+                   "openai_api_version": "2022-12-01",
                 }
             )
-            os.environ["OPENAI_API_TYPE"] = "azure"
-            os.environ["OPENAI_API_BASE"] = "https://stregatto.openai.azure.com/"
 
     elif "COHERE_KEY" in os.environ:
         embedder = embedders.EmbedderCohereConfig.get_embedder_from_config(
